@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Full Collection Catalogue | Attraqtive Label | Visakhapatnam</title>
+  <title>Complete Designer Catalogue | Attraqtive Label | Visakhapatnam</title>
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +21,12 @@
           colors: {
             attraq: {
               black: '#07080B',
-              card: '#0E1117',
+              surface: '#0F121A',
+              card: '#141824',
               neon: '#F43F5E',
-              gold: '#F59E0B',
               cyan: '#06B6D4',
-              purple: '#A855F7'
+              purple: '#A855F7',
+              gold: '#F59E0B'
             }
           },
           fontFamily: {
@@ -39,17 +40,26 @@
 
   <style>
     .glass-tech {
-      background: rgba(14, 17, 23, 0.75);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 18, 26, 0.82);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(244, 63, 94, 0.2);
     }
-    .tilt-card {
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+    .card-3d-wrap {
+      perspective: 1000px;
     }
-    .tilt-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px -15px rgba(244, 63, 94, 0.25);
+    .card-3d {
+      transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+    }
+    .zoom-img {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .zoom-container:hover .zoom-img {
+      transform: scale(1.08);
     }
   </style>
 </head>
@@ -108,14 +118,12 @@
           <span class="text-rose-500 uppercase tracking-widest text-xs font-bold">2026 Collection</span>
           <h1 class="font-display text-3xl sm:text-5xl font-extrabold text-white uppercase">Full Design Portfolio</h1>
         </div>
-        <!-- Search -->
         <div class="relative w-full md:w-80">
           <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-          <input type="text" id="cat-search" placeholder="Search gowns, sarees, capes..." class="w-full bg-attraq-card border border-white/10 rounded-full pl-10 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500">
+          <input type="text" id="cat-search" placeholder="Search gowns, sarees, capes..." class="w-full bg-attraq-surface border border-white/10 rounded-full pl-10 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500">
         </div>
       </div>
 
-      <!-- Categories -->
       <div class="flex items-center space-x-2 overflow-x-auto pb-2 no-scrollbar">
         <button class="cat-filter active bg-rose-600 text-white font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider" data-cat="all">All (12)</button>
         <button class="cat-filter bg-slate-900 border border-white/10 text-slate-400 hover:text-white px-4 py-2 rounded-full text-xs uppercase tracking-wider" data-cat="gowns">Cocktail Gowns</button>
@@ -132,7 +140,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-attraq-card border-t border-white/10 py-12 text-slate-400 text-xs mt-auto">
+  <footer class="bg-attraq-surface border-t border-white/10 py-12 text-slate-400 text-xs mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>&copy; Attraqtive Label. Waltair Main Rd, Ram Nagar, Vizag.</p>
       <p class="flex items-center space-x-1.5">
@@ -155,7 +163,7 @@
   <!-- SLIDE-OVER CART DRAWER -->
   <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition duration-500 opacity-0">
     <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition"></div>
-    <div class="absolute top-0 right-0 h-full w-full max-w-md bg-attraq-card border-l border-rose-500/30 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition duration-500 pointer-events-auto" id="cart-panel">
+    <div class="absolute top-0 right-0 h-full w-full max-w-md bg-attraq-surface border-l border-rose-500/30 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition duration-500 pointer-events-auto" id="cart-panel">
       <div>
         <div class="flex items-center justify-between pb-4 border-b border-white/10">
           <div class="flex items-center space-x-2">
@@ -185,18 +193,18 @@
     lucide.createIcons();
 
     const PRODUCTS = [
-      { id: 1, title: "Sculpted Emerald Mermaid Gown", cat: "gowns", tag: "Cocktail", inr: 28500, usd: 345, img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" },
-      { id: 2, title: "Noir Velvet Fusion Cape Set", cat: "fusion", tag: "Indo-Western", inr: 34000, usd: 410, img: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&q=80" },
-      { id: 3, title: "Liquid Gold Pre-Draped Saree", cat: "sarees", tag: "Metallic Lurex", inr: 22500, usd: 270, img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80" },
-      { id: 4, title: "Ruby Ombre Reception Lehenga", cat: "lehenga", tag: "Reception", inr: 46000, usd: 555, img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" },
-      { id: 5, title: "Architectural Halter Column Gown", cat: "gowns", tag: "Minimal Luxe", inr: 26000, usd: 315, img: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80" },
-      { id: 6, title: "Cyber-Metallic Pant-Suit Set", cat: "fusion", tag: "Power Tailoring", inr: 19500, usd: 235, img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" },
-      { id: 7, title: "Plisse Ruffle Cocktail Saree", cat: "sarees", tag: "Organza Fluted", inr: 21000, usd: 255, img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80" },
-      { id: 8, title: "Crystal-Mesh Galaxy Corset Lehenga", cat: "lehenga", tag: "Couture Gala", inr: 58000, usd: 700, img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" },
-      { id: 9, title: "Crimson Asymmetric Drape Gown", cat: "gowns", tag: "Avant-Garde", inr: 31000, usd: 375, img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" },
-      { id: 10, title: "Mirror-Work Dhoti & Jacket Combo", cat: "fusion", tag: "Sangeet Glam", inr: 23500, usd: 285, img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" },
-      { id: 11, title: "Black Diamond Foil-Printed Saree", cat: "sarees", tag: "Party Saree", inr: 18000, usd: 220, img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80" },
-      { id: 12, title: "Silver-Leaf Georgette Anarkali Set", cat: "fusion", tag: "Festive Pret", inr: 17500, usd: 210, img: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80" }
+      { id: 1, title: "Sculpted Emerald Mermaid Gown", cat: "gowns", tag: "Cocktail", inr: 28500, usd: 345, img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80" },
+      { id: 2, title: "Noir Velvet Fusion Cape Set", cat: "fusion", tag: "Indo-Western", inr: 34000, usd: 410, img: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=1000&q=80" },
+      { id: 3, title: "Liquid Gold Pre-Draped Saree", cat: "sarees", tag: "Metallic Lurex", inr: 22500, usd: 270, img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=1000&q=80" },
+      { id: 4, title: "Ruby Ombre Reception Lehenga", cat: "lehenga", tag: "Reception", inr: 46000, usd: 555, img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" },
+      { id: 5, title: "Architectural Halter Column Gown", cat: "gowns", tag: "Minimal Luxe", inr: 26000, usd: 315, img: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=1000&q=80" },
+      { id: 6, title: "Cyber-Metallic Pant-Suit Set", cat: "fusion", tag: "Power Tailoring", inr: 19500, usd: 235, img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" },
+      { id: 7, title: "Plisse Ruffle Cocktail Saree", cat: "sarees", tag: "Organza Fluted", inr: 21000, usd: 255, img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1000&q=80" },
+      { id: 8, title: "Crystal-Mesh Galaxy Corset Lehenga", cat: "lehenga", tag: "Couture Gala", inr: 58000, usd: 700, img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80" },
+      { id: 9, title: "Crimson Asymmetric Drape Gown", cat: "gowns", tag: "Avant-Garde", inr: 31000, usd: 375, img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80" },
+      { id: 10, title: "Mirror-Work Dhoti & Jacket Combo", cat: "fusion", tag: "Sangeet Glam", inr: 23500, usd: 285, img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1000&q=80" },
+      { id: 11, title: "Black Diamond Foil-Printed Saree", cat: "sarees", tag: "Party Saree", inr: 18000, usd: 220, img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=1000&q=80" },
+      { id: 12, title: "Silver-Leaf Georgette Anarkali Set", cat: "fusion", tag: "Festive Pret", inr: 17500, usd: 210, img: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=1000&q=80" }
     ];
 
     let isUSD = false;
@@ -231,22 +239,24 @@
       let html = '';
       filtered.forEach(p => {
         html += `
-          <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
-            <div class="relative h-96 overflow-hidden bg-slate-900">
-              <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-              <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur border border-white/20 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">${p.tag}</span>
-            </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">${p.cat.toUpperCase()}</p>
-                <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">${p.title}</h3>
+          <div class="card-3d-wrap">
+            <div class="card-3d group bg-attraq-surface rounded-2xl border border-white/10 overflow-hidden flex flex-col relative shadow-xl">
+              <div class="zoom-container relative h-96 bg-slate-950">
+                <img src="${p.img}" alt="${p.title}" class="zoom-img w-full h-full object-cover">
+                <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur border border-white/20 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">${p.tag}</span>
               </div>
-              <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-                <span class="text-base font-bold text-white">${formatPrice(p.inr, p.usd)}</span>
-                <button onclick="addToCart(${p.id})" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
-                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-                  <span>Add</span>
-                </button>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">${p.cat.toUpperCase()}</p>
+                  <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">${p.title}</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span class="text-base font-bold text-white">${formatPrice(p.inr, p.usd)}</span>
+                  <button onclick="addToCart(${p.id})" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                    <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                    <span>Add</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -254,6 +264,21 @@
       });
       grid.innerHTML = html;
       lucide.createIcons();
+
+      document.querySelectorAll('.card-3d-wrap').forEach(wrap => {
+        const card = wrap.querySelector('.card-3d');
+        wrap.addEventListener('mousemove', (e) => {
+          const rect = wrap.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const rotateX = ((y - rect.height/2) / (rect.height/2)) * -10;
+          const rotateY = ((x - rect.width/2) / (rect.width/2)) * 10;
+          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        wrap.addEventListener('mouseleave', () => {
+          card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+      });
     }
 
     searchInput.addEventListener('input', (e) => {
