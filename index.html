@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attraqtive Label | High-Fashion Designer Wear & Cocktail Couture | Visakhapatnam</title>
+  <meta name="description" content="Attraqtive Label in Ram Nagar, Waltair Main Rd, Visakhapatnam. Futuristic high-fashion designer wear, Indo-Western fusion, cocktail gowns, and couture pret." />
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            attraq: {
+              black: '#07080B',
+              card: '#0E1117',
+              neon: '#F43F5E',
+              gold: '#F59E0B',
+              cyan: '#06B6D4',
+              purple: '#A855F7'
+            }
+          },
+          fontFamily: {
+            display: ['"Syne"', 'sans-serif'],
+            sans: ['"Space Grotesk"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .cyber-gradient {
+      background: linear-gradient(135deg, #F43F5E 0%, #A855F7 50%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .neon-border {
+      position: relative;
+    }
+    .neon-border::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(90deg, #F43F5E, #06B6D4);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0.4;
+      transition: opacity 0.3s;
+    }
+    .neon-border:hover::before {
+      opacity: 1;
+    }
+    .glass-tech {
+      background: rgba(14, 17, 23, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .tilt-card {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+      transform-style: preserve-3d;
+    }
+    .tilt-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px -15px rgba(244, 63, 94, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-attraq-black text-slate-100 font-sans selection:bg-rose-500 selection:text-white antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- TOP AGENCY BRANDING (HIVECLICKS.COM) -->
+  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-b border-rose-500/30 py-2.5 px-4 text-center text-xs text-slate-300 flex items-center justify-center flex-wrap gap-2 sticky top-0 z-[60]">
+    <div class="flex items-center space-x-2">
+      <img src="hiveclicks-logo.png" alt="HiveClicks Logo" class="h-5 w-auto object-contain rounded bg-white/10 p-0.5">
+      <span class="font-bold text-white tracking-wide">Designed & Powered by <a href="https://hiveclicks.com/" target="_blank" class="text-rose-400 underline hover:text-rose-300">HiveClicks</a></span>
+    </div>
+    <span class="hidden md:inline text-slate-500">•</span>
+    <span class="text-slate-400">Next-Gen E-Commerce Prototype for <strong>Attraqtive Label (Ram Nagar, Vizag)</strong></span>
+    <a href="https://hiveclicks.com/" target="_blank" class="inline-flex items-center space-x-1 bg-rose-500 hover:bg-rose-400 text-white px-2.5 py-0.5 rounded-full font-bold text-[11px] transition shadow-lg shadow-rose-500/20">
+      <span>Visit HiveClicks.com</span>
+      <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+    </a>
+  </div>
+
+  <!-- PERFECT MODERN TECHIE HEADER -->
+  <header class="sticky top-10 z-50 glass-tech border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-500 to-purple-600 flex items-center justify-center text-white font-black shadow-lg shadow-rose-500/25 group-hover:scale-105 transition">
+          <span class="font-display text-xl">A</span>
+        </div>
+        <div>
+          <span class="font-display text-xl sm:text-2xl font-black tracking-tight text-white block">ATTRAQTIVE<span class="text-rose-500">.</span></span>
+          <span class="text-[9px] uppercase tracking-[0.25em] text-slate-400 font-bold block">Designer Wear • Ram Nagar</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-bold text-slate-300">
+        <a href="index.html" class="text-rose-400 border-b-2 border-rose-500 pb-1">Home</a>
+        <a href="catalog.html" class="hover:text-rose-400 transition">Full Catalogue</a>
+        <a href="#studio" class="hover:text-rose-400 transition">Ram Nagar Studio</a>
+        <a href="#reviews" class="hover:text-rose-400 transition">Client Reviews</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center space-x-4">
+        <button id="currency-toggle" class="text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-rose-300 hover:border-rose-400 transition">
+          <span id="current-currency">INR (₹)</span>
+        </button>
+
+        <button id="cart-btn" class="relative p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-rose-500/50 text-white transition">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="cart-count-badge" class="absolute -top-1.5 -right-1.5 bg-rose-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-lg shadow-rose-500/40">0</span>
+        </button>
+
+        <a href="catalog.html" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-rose-500/30">
+          <span>Shop Edit</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 3D WEBGL HERO CANVAS & EDITORIAL HEADLINE -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24">
+    <!-- Interactive Three.js 3D Background Canvas -->
+    <div id="three-container" class="absolute inset-0 w-full h-full pointer-events-none z-0"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-tech border border-rose-500/30 text-xs text-rose-300 font-semibold mb-6">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+        </span>
+        <span>Waltair Main Road, Opp. ICICI Bank, Ram Nagar, Vizag</span>
+      </div>
+
+      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 uppercase leading-none">
+        Architectural Couture for <br class="hidden sm:inline">
+        <span class="cyber-gradient">The Modern Vanguard</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base font-normal leading-relaxed mb-10">
+        Bold silhouettes, sculpted cocktail gowns, statement Indo-Western fusion, and bespoke designer pret tailored with razor-sharp precision in Visakhapatnam.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="catalog.html" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-widest shadow-2xl shadow-rose-500/30 transition transform hover:-translate-y-1">
+          <span>Explore Full Catalogue</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#studio" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 glass-tech hover:bg-slate-800 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-widest transition">
+          <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
+          <span>Visit Studio</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-20 pt-8 border-t border-white/10 text-center">
+        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
+          <p class="font-display text-3xl font-extrabold text-white">4.8★</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Google Reviews</p>
+        </div>
+        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
+          <p class="font-display text-3xl font-extrabold text-rose-400">100%</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Bespoke Fit</p>
+        </div>
+        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
+          <p class="font-display text-3xl font-extrabold text-cyan-400">7-Day</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Express Delivery</p>
+        </div>
+        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
+          <p class="font-display text-3xl font-extrabold text-purple-400">Global</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">NRI Shipping</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOME CATALOGUE PREVIEW (4 FEATURED PIECES) -->
+  <section class="py-24 relative bg-attraq-card/40 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-rose-500 uppercase tracking-widest text-xs font-bold block mb-2">High-Voltage Pret</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white uppercase">Featured Lookbook</h2>
+        </div>
+        <a href="catalog.html" class="inline-flex items-center space-x-2 text-rose-400 hover:text-rose-300 font-bold text-xs uppercase tracking-wider mt-4 md:mt-0 transition group">
+          <span>View All 12+ Designs</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <!-- 4 Highlight Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Item 1 -->
+        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+          <div class="relative h-96 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" alt="Sculpted Emerald Mermaid Gown" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <span class="absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Cocktail Couture</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">Metallic Emerald Satin</p>
+              <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Sculpted Mermaid Evening Gown</h3>
+              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Corseted bodice with architectural hip drape and dramatic thigh-high slit.</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-base font-bold text-white price-tag" data-inr="28500" data-usd="345">₹28,500</span>
+              <button onclick="addToCart(1)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+          <div class="relative h-96 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&q=80" alt="Noir Velvet Cape Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <span class="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Indo-Western</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] text-purple-400 uppercase tracking-widest font-bold mb-1">Micro-Zari Wirework</p>
+              <h3 class="font-display text-lg font-bold text-white group-hover:text-purple-400 transition">Noir Velvet Fusion Cape Set</h3>
+              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Hand-embroidered floor-length cape paired with flared bootcut silk trousers and bustier.</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-base font-bold text-white price-tag" data-inr="34000" data-usd="410">₹34,000</span>
+              <button onclick="addToCart(2)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+          <div class="relative h-96 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80" alt="Liquid Gold Cocktail Saree" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Pre-Draped</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] text-amber-400 uppercase tracking-widest font-bold mb-1">Liquid Metallic Lurex</p>
+              <h3 class="font-display text-lg font-bold text-white group-hover:text-amber-400 transition">Liquid Gold Pre-Draped Saree</h3>
+              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Effortless ready-to-wear silhouette with 3D crystal embellished structured blouse.</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-base font-bold text-white price-tag" data-inr="22500" data-usd="270">₹22,500</span>
+              <button onclick="addToCart(3)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+          <div class="relative h-96 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Ruby Ombre Reception Lehenga" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Reception Luxe</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">Dual-Tone Micro Sequins</p>
+              <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Ruby Ombre Reception Lehenga</h3>
+              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Geometric shimmer paneling with an infinity sweetheart neckline corset blouse.</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-base font-bold text-white price-tag" data-inr="46000" data-usd="555">₹46,000</span>
+              <button onclick="addToCart(4)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SEE MORE BUTTON REDIRECTING TO FULL CATALOGUE -->
+      <div class="mt-14 text-center">
+        <a href="catalog.html" class="inline-flex items-center space-x-3 bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-10 py-4 rounded-xl text-xs uppercase tracking-widest shadow-2xl shadow-rose-500/30 transition transform hover:-translate-y-1 group">
+          <span>See More / View Complete Catalogue (12+ Styles)</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+        <p class="text-xs text-slate-400 mt-2">Cocktail Gowns • Indo-Western Sets • Pre-Draped Sarees • Fusion Pantsuits</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STUDIO LOCATION & MAP (RAM NAGAR, WALTAIR MAIN RD) -->
+  <section id="studio" class="py-20 bg-attraq-black border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-rose-500 uppercase tracking-widest text-xs font-bold">Studio Visit</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase">The Ram Nagar Studio</h2>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+          Step into our boutique on Waltair Main Road. Touch luxury fabrics, try designer samples, and collaborate on your bespoke measurements.
+        </p>
+
+        <div class="space-y-4 text-xs text-slate-300">
+          <div class="flex items-start space-x-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-rose-500 mt-0.5"></i>
+            <div>
+              <p class="font-bold text-white">Location</p>
+              <p class="text-slate-400">SF-2, Waltair Main Rd, opp. ICICI Bank, Ram Nagar, Visakhapatnam, Andhra Pradesh 530002</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i data-lucide="clock" class="w-5 h-5 text-rose-500 mt-0.5"></i>
+            <div>
+              <p class="font-bold text-white">Opening Hours</p>
+              <p class="text-slate-400">Monday - Saturday: 11:00 AM - 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a href="https://maps.app.goo.gl/YCL3kjrXGSqzB3tWA?g_st=ac" target="_blank" class="inline-flex items-center space-x-2 bg-slate-900 border border-rose-500/40 text-rose-300 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition hover:bg-slate-800">
+            <i data-lucide="navigation" class="w-4 h-4"></i>
+            <span>Open in Google Maps</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-attraq-card p-3 rounded-2xl border border-white/10 shadow-2xl">
+        <div class="w-full h-80 rounded-xl overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8!2d83.310!3d17.722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943416448bb4d%3A0xca95b097157c2ab6!2sAttraqtive%20label%20-%20Designer%20wear!5e0!3m2!1sen!2sin!4v1700000000000" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-attraq-card border-t border-white/10 py-12 text-slate-400 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-rose-500 flex items-center justify-center text-white font-black text-sm">A</div>
+          <span class="font-display text-lg font-bold text-white">ATTRAQTIVE LABEL</span>
+        </div>
+        <div class="flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
+          <a href="index.html" class="hover:text-rose-400 transition">Home</a>
+          <a href="catalog.html" class="hover:text-rose-400 transition">Full Catalogue</a>
+          <a href="#studio" class="hover:text-rose-400 transition">Ram Nagar Studio</a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+        <p>&copy; <span id="year"></span> Attraqtive Label. Ram Nagar, Visakhapatnam.</p>
+        <p class="flex items-center space-x-1.5">
+          <img src="hiveclicks-logo.png" alt="HiveClicks Logo" class="h-4 w-auto object-contain rounded bg-white/10 p-0.5">
+          <span>Engineered & Marketed by</span>
+          <a href="https://hiveclicks.com/" target="_blank" class="text-rose-400 font-bold hover:underline">HiveClicks</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING HIVECLICKS BADGE -->
+  <div class="fixed bottom-6 left-6 z-40">
+    <a href="https://hiveclicks.com/" target="_blank" class="glass-tech hover:bg-slate-900 border border-rose-500/40 text-white px-3.5 py-2 rounded-full shadow-2xl flex items-center space-x-2 transition transform hover:scale-105 group">
+      <img src="hiveclicks-logo.png" alt="HiveClicks Logo" class="h-5 w-auto object-contain rounded bg-white/10 p-0.5">
+      <span class="text-[11px] font-bold text-slate-300 group-hover:text-rose-300">Designed by <strong class="text-rose-400">HiveClicks</strong></span>
+      <i data-lucide="external-link" class="w-3 h-3 text-slate-400 group-hover:text-rose-400"></i>
+    </a>
+  </div>
+
+  <!-- SLIDE-OVER CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition duration-500 opacity-0">
+    <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition"></div>
+    <div class="absolute top-0 right-0 h-full w-full max-w-md bg-attraq-card border-l border-rose-500/30 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition duration-500 pointer-events-auto" id="cart-panel">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="shopping-bag" class="w-5 h-5 text-rose-400"></i>
+            <h3 class="font-display text-lg font-bold text-white uppercase">Your Bag</h3>
+          </div>
+          <button id="close-cart-btn" class="p-2 text-slate-400 hover:text-white transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div id="cart-items-container" class="py-6 space-y-4 max-h-[55vh] overflow-y-auto pr-1"></div>
+      </div>
+      <div class="border-t border-white/10 pt-4 space-y-4">
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-slate-400 font-medium">Subtotal:</span>
+          <span class="font-bold text-lg text-white" id="cart-subtotal">₹0</span>
+        </div>
+        <button id="whatsapp-checkout-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/30 transition">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>Direct WhatsApp Order / Custom Sizing</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREE.JS 3D INTERACTIVE GRAPHIC MOTION ENGINE -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // THREE.JS 3D TORUS & FLOATING CYBER PARTICLES
+    const container = document.getElementById('three-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    // Torus Geometry with Wireframe
+    const geometry = new THREE.TorusKnotGeometry(9, 2.5, 100, 16);
+    const material = new THREE.MeshBasicMaterial({ 
+      color: 0xf43f5e, 
+      wireframe: true, 
+      transparent: true, 
+      opacity: 0.15 
+    });
+    const torus = new THREE.Mesh(geometry, material);
+    scene.add(torus);
+
+    // Particles
+    const particlesGeo = new THREE.BufferGeometry();
+    const count = 180;
+    const positions = new Float32Array(count * 3);
+    for(let i=0; i<count*3; i++) {
+      positions[i] = (Math.random() - 0.5) * 60;
+    }
+    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const particlesMat = new THREE.PointsMaterial({
+      size: 0.6,
+      color: 0x06b6d4,
+      transparent: true,
+      opacity: 0.5
+    });
+    const particles = new THREE.Points(particlesGeo, particlesMat);
+    scene.add(particles);
+
+    camera.position.z = 28;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth) - 0.5;
+      mouseY = (e.clientY / window.innerHeight) - 0.5;
+    });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      torus.rotation.x += 0.003;
+      torus.rotation.y += 0.005;
+      torus.position.x += (mouseX * 5 - torus.position.x) * 0.05;
+      torus.position.y += (-mouseY * 5 - torus.position.y) * 0.05;
+      particles.rotation.y -= 0.001;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // CART & CURRENCY
+    const ATTRAQ_CATALOG = {
+      1: { id: 1, title: "Sculpted Mermaid Evening Gown", inr: 28500, usd: 345, img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" },
+      2: { id: 2, title: "Noir Velvet Fusion Cape Set", inr: 34000, usd: 410, img: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&q=80" },
+      3: { id: 3, title: "Liquid Gold Pre-Draped Saree", inr: 22500, usd: 270, img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80" },
+      4: { id: 4, title: "Ruby Ombre Reception Lehenga", inr: 46000, usd: 555, img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" }
+    };
+
+    let isUSD = false;
+    let cart = [];
+    const currencyToggle = document.getElementById('currency-toggle');
+    const currentCurrency = document.getElementById('current-currency');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartBackdrop = document.getElementById('cart-backdrop');
+    const cartBtn = document.getElementById('cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const cartCountBadge = document.getElementById('cart-count-badge');
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartSubtotal = document.getElementById('cart-subtotal');
+    const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
+
+    currencyToggle.addEventListener('click', () => {
+      isUSD = !isUSD;
+      currentCurrency.textContent = isUSD ? "USD ($)" : "INR (₹)";
+      document.querySelectorAll('.price-tag').forEach(el => {
+        const inr = parseInt(el.getAttribute('data-inr'));
+        const usd = parseInt(el.getAttribute('data-usd'));
+        el.textContent = isUSD ? `$${usd.toLocaleString()}` : `₹${inr.toLocaleString()}`;
+      });
+      renderCart();
+    });
+
+    function toggleCart(show) {
+      if (show) {
+        cartDrawer.classList.remove('opacity-0', 'pointer-events-none');
+        cartDrawer.classList.add('opacity-100');
+        cartPanel.classList.remove('translate-x-full');
+      } else {
+        cartDrawer.classList.add('opacity-0', 'pointer-events-none');
+        cartDrawer.classList.remove('opacity-100');
+        cartPanel.classList.add('translate-x-full');
+      }
+    }
+
+    cartBtn.addEventListener('click', () => toggleCart(true));
+    closeCartBtn.addEventListener('click', () => toggleCart(false));
+    cartBackdrop.addEventListener('click', () => toggleCart(false));
+
+    function addToCart(id) {
+      const prod = ATTRAQ_CATALOG[id];
+      const existing = cart.find(i => i.id === id);
+      if (existing) existing.qty += 1;
+      else cart.push({ ...prod, qty: 1 });
+      renderCart();
+      toggleCart(true);
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+      renderCart();
+    }
+
+    function renderCart() {
+      cartCountBadge.textContent = cart.reduce((a, b) => a + b.qty, 0);
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="text-center text-slate-500 py-10">Your bag is empty.</p>';
+        cartSubtotal.textContent = isUSD ? "$0" : "₹0";
+        return;
+      }
+      let subtotalINR = 0;
+      let subtotalUSD = 0;
+      let html = '';
+      cart.forEach(item => {
+        subtotalINR += item.inr * item.qty;
+        subtotalUSD += item.usd * item.qty;
+        const pr = isUSD ? `$${(item.usd * item.qty).toLocaleString()}` : `₹${(item.inr * item.qty).toLocaleString()}`;
+        html += `
+          <div class="flex items-center space-x-3 bg-slate-900/60 p-3 rounded-xl border border-white/10">
+            <img src="${item.img}" class="w-16 h-20 object-cover rounded-lg">
+            <div class="flex-1">
+              <h4 class="font-display text-xs font-bold text-white">${item.title}</h4>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex items-center space-x-2 bg-slate-950 px-2 py-1 rounded-md border border-slate-800 text-xs">
+                  <button onclick="changeQty(${item.id}, -1)">-</button>
+                  <span class="font-bold text-white px-1">${item.qty}</span>
+                  <button onclick="changeQty(${item.id}, 1)">+</button>
+                </div>
+                <span class="text-xs font-bold text-rose-400">${pr}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      cartItemsContainer.innerHTML = html;
+      cartSubtotal.textContent = isUSD ? `$${subtotalUSD.toLocaleString()}` : `₹${subtotalINR.toLocaleString()}`;
+    }
+
+    whatsappCheckoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) return alert("Your bag is empty.");
+      let msg = "Hi Attraqtive Label (Ram Nagar, Vizag)! I want to inquire about:\n\n";
+      cart.forEach((i, idx) => {
+        const pr = isUSD ? `$${i.usd * i.qty}` : `₹${(i.inr * i.qty).toLocaleString()}`;
+        msg += `${idx + 1}. ${i.title} (Qty: ${i.qty}) - ${pr}\n`;
+      });
+      msg += `\nSubtotal: ${cartSubtotal.textContent}\nPlease share custom sizing details.`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  </script>
+</body>
+</html>
