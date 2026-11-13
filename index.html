@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attraqtive Label | High-Fashion Designer Wear & Cocktail Couture | Visakhapatnam</title>
-  <meta name="description" content="Attraqtive Label in Ram Nagar, Waltair Main Rd, Visakhapatnam. Futuristic high-fashion designer wear, Indo-Western fusion, cocktail gowns, and couture pret." />
+  <title>Attraqtive Label | 3D Interactive Designer Wear & Cocktail Couture | Vizag</title>
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,8 +13,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
   <script>
     tailwind.config = {
@@ -25,11 +23,12 @@
           colors: {
             attraq: {
               black: '#07080B',
-              card: '#0E1117',
+              surface: '#0F121A',
+              card: '#141824',
               neon: '#F43F5E',
-              gold: '#F59E0B',
               cyan: '#06B6D4',
-              purple: '#A855F7'
+              purple: '#A855F7',
+              gold: '#F59E0B'
             }
           },
           fontFamily: {
@@ -47,35 +46,40 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .neon-border {
-      position: relative;
+    .glass-tech {
+      background: rgba(15, 18, 26, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(244, 63, 94, 0.2);
     }
-    .neon-border::before {
-      content: '';
+    .card-3d-wrap {
+      perspective: 1000px;
+    }
+    .card-3d {
+      transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .card-glare {
       position: absolute;
-      inset: -1px;
-      background: linear-gradient(90deg, #F43F5E, #06B6D4);
-      border-radius: inherit;
-      z-index: -1;
-      opacity: 0.4;
-      transition: opacity 0.3s;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 0%, rgba(244,63,94,0.3), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    .neon-border:hover::before {
+    .card-3d:hover .card-glare {
       opacity: 1;
     }
-    .glass-tech {
-      background: rgba(14, 17, 23, 0.75);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
     }
-    .tilt-card {
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
-      transform-style: preserve-3d;
+    .zoom-img {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .tilt-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px -15px rgba(244, 63, 94, 0.25);
+    .zoom-container:hover .zoom-img {
+      transform: scale(1.08);
     }
   </style>
 </head>
@@ -88,20 +92,19 @@
       <span class="font-bold text-white tracking-wide">Designed & Powered by <a href="https://hiveclicks.com/" target="_blank" class="text-rose-400 underline hover:text-rose-300">HiveClicks</a></span>
     </div>
     <span class="hidden md:inline text-slate-500">•</span>
-    <span class="text-slate-400">Next-Gen E-Commerce Prototype for <strong>Attraqtive Label (Ram Nagar, Vizag)</strong></span>
+    <span class="text-slate-400">3D Interactive Runway Storefront for <strong>Attraqtive Label (Ram Nagar, Vizag)</strong></span>
     <a href="https://hiveclicks.com/" target="_blank" class="inline-flex items-center space-x-1 bg-rose-500 hover:bg-rose-400 text-white px-2.5 py-0.5 rounded-full font-bold text-[11px] transition shadow-lg shadow-rose-500/20">
       <span>Visit HiveClicks.com</span>
       <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
     </a>
   </div>
 
-  <!-- PERFECT MODERN TECHIE HEADER -->
+  <!-- PERFECT MODERN HEADER -->
   <header class="sticky top-10 z-50 glass-tech border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
       <a href="index.html" class="flex items-center space-x-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-500 to-purple-600 flex items-center justify-center text-white font-black shadow-lg shadow-rose-500/25 group-hover:scale-105 transition">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-500 to-purple-600 flex items-center justify-center text-white font-black shadow-lg shadow-rose-500/30 group-hover:scale-105 transition">
           <span class="font-display text-xl">A</span>
         </div>
         <div>
@@ -110,15 +113,16 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-bold text-slate-300">
         <a href="index.html" class="text-rose-400 border-b-2 border-rose-500 pb-1">Home</a>
+        <a href="#runway-stage" class="hover:text-rose-400 transition flex items-center space-x-1">
+          <i data-lucide="box" class="w-3.5 h-3.5 text-rose-400"></i>
+          <span>3D Runway</span>
+        </a>
         <a href="catalog.html" class="hover:text-rose-400 transition">Full Catalogue</a>
         <a href="#studio" class="hover:text-rose-400 transition">Ram Nagar Studio</a>
-        <a href="#reviews" class="hover:text-rose-400 transition">Client Reviews</a>
       </nav>
 
-      <!-- Actions -->
       <div class="flex items-center space-x-4">
         <button id="currency-toggle" class="text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-rose-300 hover:border-rose-400 transition">
           <span id="current-currency">INR (₹)</span>
@@ -130,7 +134,7 @@
         </button>
 
         <a href="catalog.html" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-rose-500/30">
-          <span>Shop Edit</span>
+          <span>Shop Lookbook</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
@@ -138,176 +142,220 @@
     </div>
   </header>
 
-  <!-- 3D WEBGL HERO CANVAS & EDITORIAL HEADLINE -->
-  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24">
-    <!-- Interactive Three.js 3D Background Canvas -->
-    <div id="three-container" class="absolute inset-0 w-full h-full pointer-events-none z-0"></div>
+  <!-- 3D INTERACTIVE RUNWAY STAGE -->
+  <section id="runway-stage" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-16 bg-gradient-to-b from-attraq-black via-attraq-surface to-attraq-black">
+    <div id="three-runway-viewport" class="absolute inset-0 w-full h-full z-0 cursor-grab active:cursor-grabbing"></div>
 
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between pointer-events-none">
       
-      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-tech border border-rose-500/30 text-xs text-rose-300 font-semibold mb-6">
-        <span class="flex h-2 w-2 relative">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-        </span>
-        <span>Waltair Main Road, Opp. ICICI Bank, Ram Nagar, Vizag</span>
+      <div class="max-w-lg pointer-events-auto space-y-6 text-left">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-tech text-xs text-rose-300 font-semibold">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400 animate-pulse"></i>
+          <span>Interactive 3D Runway Stage • Drag to Spin 360°</span>
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white uppercase leading-none">
+          Architectural <br>
+          <span class="cyber-gradient">Cyber-Couture</span>
+        </h1>
+
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Ram Nagar’s vanguard fashion house. Sculpted cocktail silhouettes, dramatic cape sets, liquid gold metallic sarees, and bold reception glamour.
+        </p>
+
+        <!-- 3D Runway Shading Switcher -->
+        <div class="p-4 rounded-2xl glass-tech space-y-3">
+          <p class="text-xs uppercase tracking-widest font-bold text-slate-400">Switch 3D Runway Lighting & Gown:</p>
+          <div class="flex items-center space-x-3">
+            <button onclick="switchRunwayColor('neon')" class="swatch-btn w-9 h-9 rounded-full bg-rose-600 border-2 border-white transition transform hover:scale-110 flex items-center justify-center shadow-lg" title="Cyber Neon"></button>
+            <button onclick="switchRunwayColor('emerald')" class="swatch-btn w-9 h-9 rounded-full bg-emerald-600 border-2 border-transparent hover:border-white transition transform hover:scale-110 flex items-center justify-center shadow-lg" title="Emerald Metallic"></button>
+            <button onclick="switchRunwayColor('gold')" class="swatch-btn w-9 h-9 rounded-full bg-amber-500 border-2 border-transparent hover:border-white transition transform hover:scale-110 flex items-center justify-center shadow-lg" title="Liquid Gold"></button>
+            <button onclick="switchRunwayColor('purple')" class="swatch-btn w-9 h-9 rounded-full bg-purple-600 border-2 border-transparent hover:border-white transition transform hover:scale-110 flex items-center justify-center shadow-lg" title="Noir Velvet"></button>
+            <span id="active-runway-name" class="text-xs text-rose-300 font-semibold pl-2">Cyber Rose Gown</span>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4 pt-2">
+          <a href="catalog.html" class="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-widest shadow-2xl shadow-rose-500/30 transition transform hover:-translate-y-0.5">
+            <span>Explore Full Catalogue</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#studio" class="inline-flex items-center space-x-2 glass-tech hover:bg-slate-800 text-white font-semibold px-6 py-3.5 rounded-xl text-xs uppercase tracking-widest transition">
+            <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
+            <span>Ram Nagar Studio</span>
+          </a>
+        </div>
       </div>
 
-      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 uppercase leading-none">
-        Architectural Couture for <br class="hidden sm:inline">
-        <span class="cyber-gradient">The Modern Vanguard</span>
-      </h1>
-
-      <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base font-normal leading-relaxed mb-10">
-        Bold silhouettes, sculpted cocktail gowns, statement Indo-Western fusion, and bespoke designer pret tailored with razor-sharp precision in Visakhapatnam.
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-        <a href="catalog.html" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-widest shadow-2xl shadow-rose-500/30 transition transform hover:-translate-y-1">
-          <span>Explore Full Catalogue</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <a href="#studio" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 glass-tech hover:bg-slate-800 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-widest transition">
-          <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
-          <span>Visit Studio</span>
-        </a>
-      </div>
-
-      <!-- Quick Metrics -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-20 pt-8 border-t border-white/10 text-center">
-        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
-          <p class="font-display text-3xl font-extrabold text-white">4.8★</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Google Reviews</p>
+      <div class="pointer-events-auto hidden lg:flex flex-col items-end space-y-4">
+        <div class="glass-tech p-4 rounded-2xl text-right max-w-xs space-y-2 shadow-2xl">
+          <div class="flex items-center justify-end space-x-2 text-rose-400 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="move-3d" class="w-4 h-4"></i>
+            <span>3D Interactive HUD</span>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-snug">
+            Drag mouse across viewport to inspect 3D garment silhouette from any camera angle.
+          </p>
+          <div class="flex items-center justify-end space-x-2 pt-1">
+            <button id="toggle-runway-spin" class="text-[11px] font-bold px-3 py-1 rounded-md bg-slate-900 border border-rose-500/40 text-rose-300 hover:bg-slate-800 transition">
+              Pause Spin
+            </button>
+            <button id="reset-runway-cam" class="text-[11px] font-bold px-3 py-1 rounded-md bg-slate-900 border border-slate-700 text-slate-300 hover:text-white transition">
+              Reset Camera
+            </button>
+          </div>
         </div>
-        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
-          <p class="font-display text-3xl font-extrabold text-rose-400">100%</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Bespoke Fit</p>
-        </div>
-        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
-          <p class="font-display text-3xl font-extrabold text-cyan-400">7-Day</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Express Delivery</p>
-        </div>
-        <div class="p-4 rounded-xl bg-attraq-card/50 border border-white/5">
-          <p class="font-display text-3xl font-extrabold text-purple-400">Global</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">NRI Shipping</p>
+
+        <div class="glass-tech p-3.5 rounded-2xl flex items-center space-x-3 text-xs text-slate-300">
+          <div class="p-2 rounded-xl bg-rose-500/20 text-rose-400">
+            <i data-lucide="award" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="font-bold text-white">4.8★ Rated Designer Studio</p>
+            <p class="text-[10px] text-slate-400">Waltair Main Rd, Ram Nagar</p>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- HOME CATALOGUE PREVIEW (4 FEATURED PIECES) -->
-  <section class="py-24 relative bg-attraq-card/40 border-y border-white/5">
+  <!-- HIGHLIGHT LOOKBOOK (WITH 3D TILT & VERIFIED IMAGES) -->
+  <section class="py-24 relative bg-attraq-surface/70 border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-rose-500 uppercase tracking-widest text-xs font-bold block mb-2">High-Voltage Pret</span>
+          <span class="text-rose-500 uppercase tracking-widest text-xs font-bold block mb-2">High-Voltage Edit</span>
           <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white uppercase">Featured Lookbook</h2>
         </div>
         <a href="catalog.html" class="inline-flex items-center space-x-2 text-rose-400 hover:text-rose-300 font-bold text-xs uppercase tracking-wider mt-4 md:mt-0 transition group">
-          <span>View All 12+ Designs</span>
+          <span>View All 12+ Designs in Catalog</span>
           <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>
       </div>
 
-      <!-- 4 Highlight Cards -->
+      <!-- 4 HIGHLIGHT CARDS -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
-        <!-- Item 1 -->
-        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
-          <div class="relative h-96 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" alt="Sculpted Emerald Mermaid Gown" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <span class="absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Cocktail Couture</span>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">Metallic Emerald Satin</p>
-              <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Sculpted Mermaid Evening Gown</h3>
-              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Corseted bodice with architectural hip drape and dramatic thigh-high slit.</p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-              <span class="text-base font-bold text-white price-tag" data-inr="28500" data-usd="345">₹28,500</span>
-              <button onclick="addToCart(1)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
-                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-                <span>Add</span>
+        <!-- Product 1 -->
+        <div class="card-3d-wrap">
+          <div class="card-3d group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col relative shadow-xl">
+            <div class="card-glare"></div>
+            <div class="zoom-container relative h-96 bg-slate-950 cursor-pointer" onclick="openQuickView(1)">
+              <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80" alt="Sculpted Emerald Mermaid Gown" class="zoom-img w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Cocktail Couture</span>
+              <button class="absolute bottom-3 right-3 p-2 rounded-full glass-tech text-white hover:text-rose-400 transition" onclick="event.stopPropagation(); openQuickView(1)">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
               </button>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">Architectural Drape</p>
+                <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Sculpted Mermaid Evening Gown</h3>
+                <p class="text-xs text-slate-400 mt-1 line-clamp-2">Corseted bodice with architectural hip drape and dramatic thigh-high slit.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span class="text-base font-bold text-white price-tag" data-inr="28500" data-usd="345">₹28,500</span>
+                <button onclick="addToCart(1)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Item 2 -->
-        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
-          <div class="relative h-96 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&q=80" alt="Noir Velvet Cape Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <span class="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Indo-Western</span>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <p class="text-[10px] text-purple-400 uppercase tracking-widest font-bold mb-1">Micro-Zari Wirework</p>
-              <h3 class="font-display text-lg font-bold text-white group-hover:text-purple-400 transition">Noir Velvet Fusion Cape Set</h3>
-              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Hand-embroidered floor-length cape paired with flared bootcut silk trousers and bustier.</p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-              <span class="text-base font-bold text-white price-tag" data-inr="34000" data-usd="410">₹34,000</span>
-              <button onclick="addToCart(2)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
-                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-                <span>Add</span>
+        <!-- Product 2 -->
+        <div class="card-3d-wrap">
+          <div class="card-3d group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col relative shadow-xl">
+            <div class="card-glare"></div>
+            <div class="zoom-container relative h-96 bg-slate-950 cursor-pointer" onclick="openQuickView(2)">
+              <img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=1000&q=80" alt="Noir Velvet Fusion Cape Set" class="zoom-img w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Indo-Western</span>
+              <button class="absolute bottom-3 right-3 p-2 rounded-full glass-tech text-white hover:text-purple-400 transition" onclick="event.stopPropagation(); openQuickView(2)">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
               </button>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] text-purple-400 uppercase tracking-widest font-bold mb-1">Micro-Zari Wirework</p>
+                <h3 class="font-display text-lg font-bold text-white group-hover:text-purple-400 transition">Noir Velvet Fusion Cape Set</h3>
+                <p class="text-xs text-slate-400 mt-1 line-clamp-2">Hand-embroidered floor-length cape paired with flared bootcut silk trousers and bustier.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span class="text-base font-bold text-white price-tag" data-inr="34000" data-usd="410">₹34,000</span>
+                <button onclick="addToCart(2)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Item 3 -->
-        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
-          <div class="relative h-96 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80" alt="Liquid Gold Cocktail Saree" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Pre-Draped</span>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <p class="text-[10px] text-amber-400 uppercase tracking-widest font-bold mb-1">Liquid Metallic Lurex</p>
-              <h3 class="font-display text-lg font-bold text-white group-hover:text-amber-400 transition">Liquid Gold Pre-Draped Saree</h3>
-              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Effortless ready-to-wear silhouette with 3D crystal embellished structured blouse.</p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-              <span class="text-base font-bold text-white price-tag" data-inr="22500" data-usd="270">₹22,500</span>
-              <button onclick="addToCart(3)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
-                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-                <span>Add</span>
+        <!-- Product 3 -->
+        <div class="card-3d-wrap">
+          <div class="card-3d group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col relative shadow-xl">
+            <div class="card-glare"></div>
+            <div class="zoom-container relative h-96 bg-slate-950 cursor-pointer" onclick="openQuickView(3)">
+              <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=1000&q=80" alt="Liquid Gold Pre-Draped Saree" class="zoom-img w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Pre-Draped</span>
+              <button class="absolute bottom-3 right-3 p-2 rounded-full glass-tech text-white hover:text-amber-400 transition" onclick="event.stopPropagation(); openQuickView(3)">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
               </button>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] text-amber-400 uppercase tracking-widest font-bold mb-1">Liquid Metallic Lurex</p>
+                <h3 class="font-display text-lg font-bold text-white group-hover:text-amber-400 transition">Liquid Gold Pre-Draped Saree</h3>
+                <p class="text-xs text-slate-400 mt-1 line-clamp-2">Effortless ready-to-wear silhouette with 3D crystal embellished structured blouse.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span class="text-base font-bold text-white price-tag" data-inr="22500" data-usd="270">₹22,500</span>
+                <button onclick="addToCart(3)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Item 4 -->
-        <div class="tilt-card group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col">
-          <div class="relative h-96 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Ruby Ombre Reception Lehenga" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Reception Luxe</span>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">Dual-Tone Micro Sequins</p>
-              <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Ruby Ombre Reception Lehenga</h3>
-              <p class="text-xs text-slate-400 mt-1 line-clamp-2">Geometric shimmer paneling with an infinity sweetheart neckline corset blouse.</p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-              <span class="text-base font-bold text-white price-tag" data-inr="46000" data-usd="555">₹46,000</span>
-              <button onclick="addToCart(4)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
-                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-                <span>Add</span>
+        <!-- Product 4 -->
+        <div class="card-3d-wrap">
+          <div class="card-3d group bg-attraq-card rounded-2xl border border-white/10 overflow-hidden flex flex-col relative shadow-xl">
+            <div class="card-glare"></div>
+            <div class="zoom-container relative h-96 bg-slate-950 cursor-pointer" onclick="openQuickView(4)">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" alt="Ruby Ombre Reception Lehenga" class="zoom-img w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider">Reception Luxe</span>
+              <button class="absolute bottom-3 right-3 p-2 rounded-full glass-tech text-white hover:text-rose-400 transition" onclick="event.stopPropagation(); openQuickView(4)">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
               </button>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] text-rose-400 uppercase tracking-widest font-bold mb-1">Dual-Tone Micro Sequins</p>
+                <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Ruby Ombre Reception Lehenga</h3>
+                <p class="text-xs text-slate-400 mt-1 line-clamp-2">Geometric shimmer paneling with an infinity sweetheart neckline corset blouse.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span class="text-base font-bold text-white price-tag" data-inr="46000" data-usd="555">₹46,000</span>
+                <button onclick="addToCart(4)" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1 shadow-lg shadow-rose-600/20">
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- SEE MORE BUTTON REDIRECTING TO FULL CATALOGUE -->
+      <!-- SEE MORE / VIEW COMPLETE CATALOGUE BUTTON -->
       <div class="mt-14 text-center">
         <a href="catalog.html" class="inline-flex items-center space-x-3 bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white font-bold px-10 py-4 rounded-xl text-xs uppercase tracking-widest shadow-2xl shadow-rose-500/30 transition transform hover:-translate-y-1 group">
-          <span>See More / View Complete Catalogue (12+ Styles)</span>
+          <span>Explore Complete Catalogue (12+ Designs)</span>
           <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>
         <p class="text-xs text-slate-400 mt-2">Cocktail Gowns • Indo-Western Sets • Pre-Draped Sarees • Fusion Pantsuits</p>
@@ -316,29 +364,29 @@
     </div>
   </section>
 
-  <!-- STUDIO LOCATION & MAP (RAM NAGAR, WALTAIR MAIN RD) -->
-  <section id="studio" class="py-20 bg-attraq-black border-b border-white/10">
+  <!-- STUDIO LOCATION -->
+  <section id="studio" class="py-20 bg-attraq-black border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       
       <div class="lg:col-span-5 space-y-6">
-        <span class="text-rose-500 uppercase tracking-widest text-xs font-bold">Studio Visit</span>
+        <span class="text-rose-500 uppercase tracking-widest text-xs font-bold">Studio Destination</span>
         <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase">The Ram Nagar Studio</h2>
         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-          Step into our boutique on Waltair Main Road. Touch luxury fabrics, try designer samples, and collaborate on your bespoke measurements.
+          Step into our flagship studio on Waltair Main Road, directly opposite ICICI Bank. Private styling trials and custom sizing sessions available daily.
         </p>
 
         <div class="space-y-4 text-xs text-slate-300">
           <div class="flex items-start space-x-3">
             <i data-lucide="map-pin" class="w-5 h-5 text-rose-500 mt-0.5"></i>
             <div>
-              <p class="font-bold text-white">Location</p>
+              <p class="font-bold text-white">Address</p>
               <p class="text-slate-400">SF-2, Waltair Main Rd, opp. ICICI Bank, Ram Nagar, Visakhapatnam, Andhra Pradesh 530002</p>
             </div>
           </div>
           <div class="flex items-start space-x-3">
             <i data-lucide="clock" class="w-5 h-5 text-rose-500 mt-0.5"></i>
             <div>
-              <p class="font-bold text-white">Opening Hours</p>
+              <p class="font-bold text-white">Hours</p>
               <p class="text-slate-400">Monday - Saturday: 11:00 AM - 9:00 PM</p>
             </div>
           </div>
@@ -352,7 +400,7 @@
         </div>
       </div>
 
-      <div class="lg:col-span-7 bg-attraq-card p-3 rounded-2xl border border-white/10 shadow-2xl">
+      <div class="lg:col-span-7 bg-attraq-surface p-3 rounded-2xl border border-white/10 shadow-2xl">
         <div class="w-full h-80 rounded-xl overflow-hidden">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8!2d83.310!3d17.722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943416448bb4d%3A0xca95b097157c2ab6!2sAttraqtive%20label%20-%20Designer%20wear!5e0!3m2!1sen!2sin!4v1700000000000" 
@@ -369,28 +417,14 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-attraq-card border-t border-white/10 py-12 text-slate-400 text-xs mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
-        <div class="flex items-center space-x-3">
-          <div class="w-8 h-8 rounded-lg bg-rose-500 flex items-center justify-center text-white font-black text-sm">A</div>
-          <span class="font-display text-lg font-bold text-white">ATTRAQTIVE LABEL</span>
-        </div>
-        <div class="flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
-          <a href="index.html" class="hover:text-rose-400 transition">Home</a>
-          <a href="catalog.html" class="hover:text-rose-400 transition">Full Catalogue</a>
-          <a href="#studio" class="hover:text-rose-400 transition">Ram Nagar Studio</a>
-        </div>
-      </div>
-
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
-        <p>&copy; <span id="year"></span> Attraqtive Label. Ram Nagar, Visakhapatnam.</p>
-        <p class="flex items-center space-x-1.5">
-          <img src="hiveclicks-logo.png" alt="HiveClicks Logo" class="h-4 w-auto object-contain rounded bg-white/10 p-0.5">
-          <span>Engineered & Marketed by</span>
-          <a href="https://hiveclicks.com/" target="_blank" class="text-rose-400 font-bold hover:underline">HiveClicks</a>
-        </p>
-      </div>
+  <footer class="bg-attraq-surface border-t border-white/10 py-12 text-slate-400 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="year"></span> Attraqtive Label. Waltair Main Rd, Ram Nagar, Vizag.</p>
+      <p class="flex items-center space-x-1.5">
+        <img src="hiveclicks-logo.png" alt="HiveClicks Logo" class="h-4 w-auto object-contain rounded bg-white/10 p-0.5">
+        <span>Engineered & Marketed by</span>
+        <a href="https://hiveclicks.com/" target="_blank" class="text-rose-400 font-bold hover:underline">HiveClicks</a>
+      </p>
     </div>
   </footer>
 
@@ -432,57 +466,108 @@
     </div>
   </div>
 
-  <!-- THREE.JS 3D INTERACTIVE GRAPHIC MOTION ENGINE -->
+  <!-- QUICK VIEW MODAL -->
+  <div id="quickview-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/75 backdrop-blur-md">
+    <div class="bg-attraq-card border border-rose-500/40 rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white transition">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center" id="quickview-content"></div>
+    </div>
+  </div>
+
+  <!-- THREE.JS 3D RUNWAY ENGINE & ORBIT CONTROLS -->
   <script>
     lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // THREE.JS 3D TORUS & FLOATING CYBER PARTICLES
-    const container = document.getElementById('three-container');
+    const viewport = document.getElementById('three-runway-viewport');
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    container.appendChild(renderer.domElement);
+    viewport.appendChild(renderer.domElement);
 
-    // Torus Geometry with Wireframe
-    const geometry = new THREE.TorusKnotGeometry(9, 2.5, 100, 16);
-    const material = new THREE.MeshBasicMaterial({ 
-      color: 0xf43f5e, 
-      wireframe: true, 
-      transparent: true, 
-      opacity: 0.15 
-    });
-    const torus = new THREE.Mesh(geometry, material);
-    scene.add(torus);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 1.4;
+    controls.maxPolarAngle = Math.PI / 2 + 0.1;
+    controls.minDistance = 10;
+    controls.maxDistance = 32;
 
-    // Particles
-    const particlesGeo = new THREE.BufferGeometry();
-    const count = 180;
-    const positions = new Float32Array(count * 3);
-    for(let i=0; i<count*3; i++) {
-      positions[i] = (Math.random() - 0.5) * 60;
+    camera.position.set(0, 3, 20);
+    controls.target.set(0, 0, 0);
+
+    // Futuristic Runway Stage Disc
+    const runwayGeo = new THREE.CylinderGeometry(5.5, 6, 0.5, 48);
+    const runwayMat = new THREE.MeshStandardMaterial({ color: 0x07080B, roughness: 0.2, metalness: 0.9 });
+    const runway = new THREE.Mesh(runwayGeo, runwayMat);
+    runway.position.y = -5.2;
+    scene.add(runway);
+
+    // Neon Rim Ring
+    const neonRingGeo = new THREE.TorusGeometry(5.7, 0.08, 16, 48);
+    const neonRingMat = new THREE.MeshBasicMaterial({ color: 0xF43F5E });
+    const neonRing = new THREE.Mesh(neonRingGeo, neonRingMat);
+    neonRing.rotation.x = Math.PI / 2;
+    neonRing.position.y = -4.9;
+    scene.add(neonRing);
+
+    // 3D Silhouette Column Gown Group
+    const gownGroup = new THREE.Group();
+    let gownMat = new THREE.MeshStandardMaterial({ color: 0xF43F5E, roughness: 0.25, metalness: 0.6 });
+
+    // Torso Bodice
+    const bodiceGeo = new THREE.CylinderGeometry(1.2, 1.5, 3.6, 32);
+    const bodice = new THREE.Mesh(bodiceGeo, gownMat);
+    bodice.position.y = 0.6;
+    gownGroup.add(bodice);
+
+    // Mermaid Fluted Skirt
+    const skirtGeo = new THREE.CylinderGeometry(1.5, 3.6, 6.2, 32);
+    const skirt = new THREE.Mesh(skirtGeo, gownMat);
+    skirt.position.y = -3.2;
+    gownGroup.add(skirt);
+
+    // Floating Cyber Shimmer Particles
+    const pGeo = new THREE.BufferGeometry();
+    const pCount = 100;
+    const pos = new Float32Array(pCount * 3);
+    for(let i=0; i<pCount*3; i+=3) {
+      pos[i] = (Math.random() - 0.5) * 14;
+      pos[i+1] = (Math.random() - 0.5) * 12;
+      pos[i+2] = (Math.random() - 0.5) * 14;
     }
-    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const particlesMat = new THREE.PointsMaterial({
-      size: 0.6,
-      color: 0x06b6d4,
-      transparent: true,
-      opacity: 0.5
-    });
-    const particles = new THREE.Points(particlesGeo, particlesMat);
-    scene.add(particles);
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const pMat = new THREE.PointsMaterial({ size: 0.35, color: 0x06B6D4, transparent: true, opacity: 0.8 });
+    const pPoints = new THREE.Points(pGeo, pMat);
+    gownGroup.add(pPoints);
 
-    camera.position.z = 28;
+    scene.add(gownGroup);
 
-    let mouseX = 0;
-    let mouseY = 0;
-    window.addEventListener('mousemove', (e) => {
-      mouseX = (e.clientX / window.innerWidth) - 0.5;
-      mouseY = (e.clientY / window.innerHeight) - 0.5;
-    });
+    // Lights
+    const ambient = new THREE.AmbientLight(0xffffff, 0.9);
+    scene.add(ambient);
+
+    const keyLight = new THREE.PointLight(0xF43F5E, 2.8, 40);
+    keyLight.position.set(10, 10, 10);
+    scene.add(keyLight);
+
+    const rimLight = new THREE.PointLight(0x06B6D4, 2.5, 40);
+    rimLight.position.set(-10, -5, -10);
+    scene.add(rimLight);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      pPoints.rotation.y += 0.003;
+      renderer.render(scene, camera);
+    }
+    animate();
 
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -490,23 +575,63 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    function animate() {
-      requestAnimationFrame(animate);
-      torus.rotation.x += 0.003;
-      torus.rotation.y += 0.005;
-      torus.position.x += (mouseX * 5 - torus.position.x) * 0.05;
-      torus.position.y += (-mouseY * 5 - torus.position.y) * 0.05;
-      particles.rotation.y -= 0.001;
-      renderer.render(scene, camera);
+    const activeRunwayName = document.getElementById('active-runway-name');
+    function switchRunwayColor(col) {
+      if (col === 'neon') {
+        gownMat.color.setHex(0xF43F5E);
+        neonRingMat.color.setHex(0xF43F5E);
+        keyLight.color.setHex(0xF43F5E);
+        activeRunwayName.textContent = "Cyber Rose Gown";
+      } else if (col === 'emerald') {
+        gownMat.color.setHex(0x10B981);
+        neonRingMat.color.setHex(0x10B981);
+        keyLight.color.setHex(0x10B981);
+        activeRunwayName.textContent = "Emerald Mermaid Satin";
+      } else if (col === 'gold') {
+        gownMat.color.setHex(0xF59E0B);
+        neonRingMat.color.setHex(0xF59E0B);
+        keyLight.color.setHex(0xF59E0B);
+        activeRunwayName.textContent = "Liquid Metallic Gold";
+      } else if (col === 'purple') {
+        gownMat.color.setHex(0x9333EA);
+        neonRingMat.color.setHex(0x9333EA);
+        keyLight.color.setHex(0x9333EA);
+        activeRunwayName.textContent = "Noir Velvet Fusion";
+      }
     }
-    animate();
 
-    // CART & CURRENCY
-    const ATTRAQ_CATALOG = {
-      1: { id: 1, title: "Sculpted Mermaid Evening Gown", inr: 28500, usd: 345, img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" },
-      2: { id: 2, title: "Noir Velvet Fusion Cape Set", inr: 34000, usd: 410, img: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&q=80" },
-      3: { id: 3, title: "Liquid Gold Pre-Draped Saree", inr: 22500, usd: 270, img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80" },
-      4: { id: 4, title: "Ruby Ombre Reception Lehenga", inr: 46000, usd: 555, img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" }
+    document.getElementById('toggle-runway-spin').addEventListener('click', function() {
+      controls.autoRotate = !controls.autoRotate;
+      this.textContent = controls.autoRotate ? "Pause Spin" : "Resume Spin";
+    });
+
+    document.getElementById('reset-runway-cam').addEventListener('click', function() {
+      camera.position.set(0, 3, 20);
+      controls.target.set(0, 0, 0);
+    });
+
+    // 3D Card Tilt
+    document.querySelectorAll('.card-3d-wrap').forEach(wrap => {
+      const card = wrap.querySelector('.card-3d');
+      wrap.addEventListener('mousemove', (e) => {
+        const rect = wrap.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = ((y - rect.height/2) / (rect.height/2)) * -11;
+        const rotateY = ((x - rect.width/2) / (rect.width/2)) * 11;
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      wrap.addEventListener('mouseleave', () => {
+        card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    // Products Database & Cart
+    const PRODUCTS = {
+      1: { id: 1, title: "Sculpted Mermaid Evening Gown", inr: 28500, usd: 345, img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80", desc: "Corseted emerald satin bodice with architectural hip drape and structured thigh slit." },
+      2: { id: 2, title: "Noir Velvet Fusion Cape Set", inr: 34000, usd: 410, img: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=1000&q=80", desc: "Micro-zari wirework on deep velvet cape paired with straight cigarette silk trousers." },
+      3: { id: 3, title: "Liquid Gold Pre-Draped Saree", inr: 22500, usd: 270, img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=1000&q=80", desc: "Metallic lurex pre-pleated drape with Swarovski embellished sculpted designer blouse." },
+      4: { id: 4, title: "Ruby Ombre Reception Lehenga", inr: 46000, usd: 555, img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80", desc: "Dual-tone geometric micro-sequin panelling with sweetheart corset top." }
     };
 
     let isUSD = false;
@@ -551,7 +676,7 @@
     cartBackdrop.addEventListener('click', () => toggleCart(false));
 
     function addToCart(id) {
-      const prod = ATTRAQ_CATALOG[id];
+      const prod = PRODUCTS[id];
       const existing = cart.find(i => i.id === id);
       if (existing) existing.qty += 1;
       else cart.push({ ...prod, qty: 1 });
@@ -612,6 +737,38 @@
       msg += `\nSubtotal: ${cartSubtotal.textContent}\nPlease share custom sizing details.`;
       window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
     });
+
+    const quickviewModal = document.getElementById('quickview-modal');
+    const quickviewContent = document.getElementById('quickview-content');
+
+    function openQuickView(id) {
+      const prod = PRODUCTS[id];
+      const pr = isUSD ? `$${prod.usd.toLocaleString()}` : `₹${prod.inr.toLocaleString()}`;
+      quickviewContent.innerHTML = `
+        <div class="h-96 rounded-2xl overflow-hidden bg-slate-950">
+          <img src="${prod.img}" class="w-full h-full object-cover">
+        </div>
+        <div class="space-y-4">
+          <h3 class="font-display text-2xl font-bold text-white uppercase">${prod.title}</h3>
+          <p class="text-2xl font-bold text-rose-400">${pr}</p>
+          <p class="text-xs text-slate-300 leading-relaxed">${prod.desc}</p>
+          <div class="pt-3 flex space-x-3">
+            <button onclick="addToCart(${prod.id}); closeQuickView();" class="flex-1 bg-rose-600 hover:bg-rose-500 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+              Add to Bag
+            </button>
+            <button onclick="closeQuickView()" class="glass-tech px-4 py-3 rounded-xl text-xs font-semibold text-white">
+              Close
+            </button>
+          </div>
+        </div>
+      `;
+      quickviewModal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeQuickView() {
+      quickviewModal.classList.add('hidden');
+    }
   </script>
 </body>
 </html>
